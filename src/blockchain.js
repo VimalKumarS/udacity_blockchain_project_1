@@ -208,11 +208,12 @@ class Blockchain {
         let self = this;
         let errorLog = [];
         return new Promise(async (resolve, _reject) => {
-            self.chain.forEach(block => {
-                if (!block.validate()) {
-                    errorLog.push(block);
+            for(let block of self.chain){
+                const _val= block.validate()
+                if('error' in _val){ // format {"error":"block validation failed","block_hash":hash}
+                    errorLog.push(_val);
                 }
-            });
+            }
             resolve(errorLog)
         });
     }
