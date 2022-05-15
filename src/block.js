@@ -45,7 +45,7 @@ class Block {
             const recomputedhash = SHA256(JSON.stringify(self)).toString();
             // Comparing if the hashes changed
             if (hash != recomputedhash) {
-                reject({"error":"block  hash validation failed","block_hash":hash});
+                resolve({"error":"block  hash validation failed","block_hash":hash});
             }
            
             resolve({"block_hash":hash});
