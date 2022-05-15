@@ -152,12 +152,12 @@ class Blockchain {
      */
     getBlockByHash(hash) {
         let self = this;
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             const block = self.chain.find(p => p.hash == hash);
             if (block) {
                 resolve(block);
             } else {
-                reject(null);
+                resolve("NOT FOUND");
             }
         });
     }

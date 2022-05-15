@@ -1,5 +1,5 @@
 
--get legacy address from bit core testnet from cli
+-- get legacy address from bit core testnet from cli
  > getnewaddress "test" legacy
 
 1) Request: http://localhost:8000/block/0
