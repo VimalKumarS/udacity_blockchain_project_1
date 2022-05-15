@@ -70,15 +70,15 @@ class Blockchain {
                 } else {
                     block.previousBlockHash = this.hash;
                 }
-                block.height = self.height + 1;
                 block.time = new Date().getTime().toString().slice(0, -3);
                 block.hash = SHA256(JSON.stringify(block)).toString();
+                block.height = self.height + 1;
                 self.chain.push(block);
                 this.height += 1;
                 resolve(block);
             }
             catch {
-                reject()
+                reject("Failed to add block")
             }
         });
     }
@@ -130,9 +130,9 @@ class Blockchain {
                 reject(null);
             }
             // Veify the message with wallet address and signature: `bitcoinMessage.verify(message, address, signature)`
-            /*** this is always returning false */
+              // console.log(message, address);
             const verify_message = bitcoinMessage.verify(message, address, signature)
-            console.log(verify_message);
+            // console.log(verify_message);
             if (!verify_message) {
                 reject(null);
             }
@@ -174,7 +174,7 @@ class Blockchain {
             if (block) {
                 resolve(block);
             } else {
-                reject(null);
+                reject("NOT FOUND");
             }
         });
     }
