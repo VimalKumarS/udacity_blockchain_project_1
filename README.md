@@ -29,6 +29,7 @@ You should see in your terminal a message indicating that the server is listenin
     "previousBlockHash": null
 }
 ````
+![](https://github.com/VimalKumarS/udacity_blockchain_project_1/blob/main/Screen%20Shot%202022-05-14%20at%206.58.32%20PM.png)
 2) Request: http://localhost:8000/requestValidation
 {
     "address":"mq8ULMhPDE1565YjCFaVo81vz5pEfEXnbp"
@@ -36,6 +37,7 @@ You should see in your terminal a message indicating that the server is listenin
 ```
 "mq8ULMhPDE1565YjCFaVo81vz5pEfEXnbp:1652632388:starRegistry"
 ```
+![](https://github.com/VimalKumarS/udacity_blockchain_project_1/blob/main/Screen%20Shot%202022-05-14%20at%207.18.00%20PM.png)
 
 3) Sign message
 "IED6V+ddOJ0zL6qFxDy5XvtKS9y1Wi1Pp18CjeklC9H9FY1x7knBk/7yKz8wZIexSc6IIfYvoJsUWCqHJAqUJck="
@@ -54,4 +56,5 @@ payload
      }
 }
 ```
+![](https://github.com/VimalKumarS/udacity_blockchain_project_1/blob/main/Screen%20Shot%202022-05-15%20at%209.34.21%20AM.png)
 5) Request: http://localhost:8000/blocks/mq8ULMhPDE1565YjCFaVo81vz5pEfEXnbp
