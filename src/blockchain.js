@@ -208,14 +208,16 @@ class Blockchain {
         let self = this;
         let errorLog = [];
         return new Promise(async (resolve, _reject) => {
-            for(let block of self.chain){
+           let previoushash = self.chain[0].previousBlockHash;
+            for(let block of self.chain.slice(1)){
                 // const _val= block.validate()
                 // if('error' in _val){ // format {"error":"block validation failed","block_hash":hash}
                 //     errorLog.push(_val);
                 // }
-                if(!block.validate()){
+                if(!block.validate() || previoushash !== block.previousBlockHash){
                     errorLog.push(_val);
                 }
+                previoushash = block.previousBlockHash;
             }
             resolve(errorLog)
         });
